@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>edit student</title>
+</head>
+<body>
+<h3>welcome to student update page</h3>
+<form action='/updatedatatotable' method='post'>
+<table>
+     <tr>
+        <td>
+            enter the student id
+        </td>
+        <td>
+            <input type="text" name="stid" value="{{row[0][0]}}" readonly>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            enter the student name
+        </td>
+        <td>
+            <input type="text" name="stname" value="{{row[0][1]}}">
+        </td>
+    </tr>
+      <tr>
+        <td>
+            enter the student location
+        </td>
+        <td>
+            <input type="text" name="stlocation" value="{{row[0][2]}}">
+        </td>
+    </tr>
+      <tr>
+        <td>
+            enter the mark1
+        </td>
+        <td>
+            <input type="text" name="stmark1" value="{{row[0][3]}}">
+        </td>
+    </tr>
+      <tr>
+        <td>
+            enter the mark2
+        </td>
+        <td>
+            <input type="text" name="stmark2" value="{{row[0][4]}}">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            enter the mark3
+        </td>
+        <td>
+            <input type="text" name="stmark3" value="{{row[0][5]}}">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="submit" value="update">
+        </td>
+
+    </tr>
+</table>
+</form>
+
+
+</body>
+</html>

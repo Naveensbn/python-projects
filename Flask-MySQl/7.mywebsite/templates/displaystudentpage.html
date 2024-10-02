@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>display student</title>
+</head>
+<body>
+<h3>welcome to display student details</h3>
+<table border="7">
+    <thead><tr>
+    <td>student_id</td>
+    <td>Student_name</td>
+    <td>Student_location</td>
+    <td>Mark1</td>
+    <td>Mark2</td>
+    <td>Mark3</td>
+    <td>Total</td>
+    <td>Average</td>
+    <td>Grade</td>
+        <td >action</td>
+    </tr>
+    </thead>
+    {% for row in rows%}
+    <tr>
+        <td>{{row[0]}}</td>
+        <td>{{row[1]}}</td>
+        <td>{{row[2]}}</td>
+        <td>{{row[3]}}</td>
+        <td>{{row[4]}}</td>
+        <td>{{row[5]}}</td>
+        <td>{{row[6]}}</td>
+        <td>{{row[7]}}</td>
+        <td>{{row[8]}}</td>
+        <td> <a href={{row[0]}}/editstudent>edit</a>
+            <a href={{row[0]}}/deletestudent>Delete</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+<a href="/">clik here to homepage</a>
+
+
+</body>
+</html>
