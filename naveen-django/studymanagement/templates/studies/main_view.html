@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% load static %}
+</head>
+<body>
+    <h1>Student Management</h1>
+    <hr>
+
+    <br>
+    <img src="{% static 'students.jpg' %}" width="150" height="150" >
+    <br>
+    <table border="2">
+        <thead>
+        <tr>
+            <th>study_name</th>
+            <th>study_phase</th>
+            <th>sponsor_name</th>
+            <th>study_description</th>
+            <th colspan="3">actions</th>
+        </tr>
+        </thead>
+        {% for study in studies %}
+        <tr>
+        <td>{{study.study_name}}</td>
+        <td>{{study.study_phase}}</td>
+        <td>{{study.sponsor_name}}</td>
+        <td>{{study.study_description}}</td>
+            <td><a href="{% url 'view_study' study.pk %}">view</a></td>
+            <td><a href="{% url 'edit_study' study.pk %}">edit</a></td>
+            <td><a href="{% url 'delete_study' study.pk %}">delete</a></td>
+
+        </tr>
+        {% endfor %}
+
+    </table>
+    <br>
+        <a href="{% url 'add_study' %}"> add study</a>
+        <br>
+        <div>
+            <form action="{% url 'logout' %}" method="post">
+            {% csrf_token %}
+<!--                <br>-->
+             <button type="submit" style="margin:50px 1px ;">Logout</button>
+            </form>
+
+        </div>
+
+
+</body>
+</html>

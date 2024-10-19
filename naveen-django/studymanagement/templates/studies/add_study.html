@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form method="post">
+        {% csrf_token %}
+        {{study_form.as_p}}
+        <button type="submit"> submit </button>
+        <a href="{% url 'main_view' %}"> cancel</a>
+    </form>
+
+</body>
+</html>
