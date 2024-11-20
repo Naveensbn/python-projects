@@ -1,0 +1,74 @@
+
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-4">
+    <div class="p-3 m-3">
+        <div class="col-lg-5 rounded mx-auto border pt-4 "> 
+            <div class="text-center col">
+            <img
+            src="https://th.bing.com/th/id/Rd51d7c0fde6d96a31538a86cbd57f3c0?rik=%2fTJxRkU2V371QQ&riu=http%3a%2f%2ftechnologyend.com%2fwp-content%2fuploads%2f2015%2f11%2fwhy-shop-online.jpg&ehk=v1KiYT0i5U1ABCRueDSdLqnazh2BdlVD89Z4qXE0Kgs%3d&risl=&pid=ImgRaw" alt=""
+            class="" style="height: 150px;">
+            <hr>
+            </div>
+            <h1>register your details</h1>
+
+            <h3 class="alert alert-info rounded-pill"  style="font-weight: 700;">Create an Account</h3>
+            
+            <form action="/signup" method="POST">
+                {% csrf_token %}
+                {% if error %}
+                <div class="alert alert-danger" role="alert">
+                    {{error}}
+                </div>
+                {% endif %}
+
+                <div class="form-group">
+                    <label for="">first name</label>
+                    <input type="text" id="" placeholder=""
+                    class="form-control form-control-sm" 
+                    value="{{values.first_name}}" name="firstname">
+                </div>
+
+                <div class="form-group">
+                    <label for="">last name</label>
+                    <input type="text" id="" value="{{values.last_name}}"
+                    class="form-control form-control-sm" name="lastname">
+
+                </div>
+
+                <div class="form-group">
+                    <label for="">Phone</label>
+                    <input type="text" id="" value="{{values.phone}}" name="phone"
+                    class="form-control form-control-sm" placeholder="9597635412">
+
+                </div>
+
+                <div class="form-group">
+                    <label for="e">Email</label>
+                    <input required type="email" id="e" placeholder="abc@gmail.com"
+                    class="form-control form-control-sm"
+                    value="{{values.email}}" name="email">
+                </div>
+
+                <div class="form-group">
+                    <label for="">Password</label>
+                    <input type="password" name="password" id=""
+                    class="form-control form-control-sm">
+
+                </div>
+
+                <div class="mb-3 form-check">
+                    <input id="check" type="checkbox"  class="form-check-input" >
+                    <label for="check"  
+                    class="form-check-label d-grid gap-2">check me out</label>
+                </div>
+
+                <button type="submit" 
+                class="btn btn-sm btn-success col-lg-12"> create an account</button>
+            </form>
+
+        </div>
+    </div>
+</div>
+{% endblock %}
+
